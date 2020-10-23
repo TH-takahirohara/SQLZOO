@@ -156,7 +156,7 @@ For Monaco-Ville the name is Monaco and the extension is -Ville.
 
 Show the name and the extension where the capital is an extension of name of the country.
 
-You can use the SQL function REPLACE.
+You can use the SQL function [REPLACE](https://sqlzoo.net/wiki/REPLACE).
 
 ```
 SELECT name, REPLACE(capital, name, '') as extension

@@ -18,7 +18,7 @@ WHERE population > 200000000;
 ### 3.
 Give the name and the per capita GDP for those countries with a population of at least 200 million.
 > HELP:How to calculate per capita GDP
-> per capita GDP is the GDP divided by the population GDP/population
+>> per capita GDP is the GDP divided by the population GDP/population
 
 ```
 SELECT name, gdp/population FROM world
@@ -77,7 +77,7 @@ Show the name and population in millions and the GDP in billions for the countri
 
 For South America show population in millions and GDP in billions both to 2 decimal places.
 > Millions and billions
-> Divide by 1000000 (6 zeros) for millions. Divide by 1000000000 (9 zeros) for billions.
+>> Divide by 1000000 (6 zeros) for millions. Divide by 1000000000 (9 zeros) for billions.
 
 ```
 SELECT name, ROUND(population/1000000, 2), ROUND(gdp/1000000000, 2)

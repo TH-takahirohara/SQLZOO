@@ -60,3 +60,25 @@ FROM actor JOIN casting ON actor.id=casting.actorid
 WHERE casting.movieid = 11768;
 ```
 
+### 7.
+Obtain the cast list for the film 'Alien'
+
+```
+SELECT name
+FROM actor JOIN casting ON actor.id=casting.actorid
+WHERE casting.movieid = (SELECT id
+FROM movie
+WHERE title = 'Alien');
+```
+
+### 8.
+List the films in which 'Harrison Ford' has appeared
+
+```
+SELECT title
+FROM movie JOIN casting ON movie.id=casting.movieid
+WHERE casting.actorid = (SELECT id
+FROM actor
+WHERE name = 'Harrison Ford');
+```
+

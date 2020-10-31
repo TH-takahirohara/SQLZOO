@@ -105,3 +105,35 @@ JOIN actor ON actorid=actor.id
 WHERE movie.yr = 1962 AND casting.ord = 1;
 ```
 
+### 11.
+Which were the busiest years for 'Rock Hudson', show the year and the number of movies he made each year for any year in which he made more than 2 movies.
+
+```
+SELECT yr,COUNT(title)
+FROM casting
+JOIN movie ON movieid=movie.id
+JOIN actor ON actorid=actor.id
+WHERE name='Rock Hudson'
+GROUP BY yr
+HAVING COUNT(title) > 2;
+```
+
+### 12.
+List the film title and the leading actor for all of the films 'Julie Andrews' played in.
+
+> Did you get"Little Miss Marker twice"?
+>> Julie Andrews starred in the 1980 remake of Little Miss Marker and not the original(1934).
+>> Title is not a unique field, create a table of IDs in your subquery
+
+```
+SELECT title, name FROM casting
+JOIN movie ON movieid=movie.id
+JOIN actor ON actorid=actor.id
+WHERE movieid IN (
+SELECT movieid FROM actor
+JOIN casting ON id=actorid
+WHERE name='Julie Andrews')
+AND ord=1;
+```
+
+

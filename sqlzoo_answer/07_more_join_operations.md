@@ -136,4 +136,15 @@ WHERE name='Julie Andrews')
 AND ord=1;
 ```
 
+### 13.
+Obtain a list, in alphabetical order, of actors who've had at least 15 starring roles.
+
+```
+SELECT name FROM casting
+JOIN actor ON actorid=actor.id
+WHERE ord=1
+GROUP BY name
+HAVING COUNT(name) > 14
+ORDER BY name;
+```
 
